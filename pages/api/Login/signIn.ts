@@ -2,15 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
 import nextSession from "next-session";
-const getSession = nextSession({ autoCommit: false });
 import jwt from 'jsonwebtoken'
-
-const KEY = 'demo'
-type Data = {
-    name: string
-}
-
-const prisma = new PrismaClient();
 
 export default function handler(
     req: NextApiRequest,
@@ -18,6 +10,13 @@ export default function handler(
 ) {
 
     const loginUser = async (params: any) => {
+        const getSession = nextSession({ autoCommit: false });
+
+
+        const KEY = 'demo'
+        
+
+        const prisma = new PrismaClient();
         const session: any = await getSession(req, res);
         // session.views = session.views ? session.views + 1 : 1;
         console.log(params);
@@ -27,14 +26,14 @@ export default function handler(
                 email: params.currentUser.email
             }
         })
-        if(user.password!=params.currentUser.password){
-            res.status(400).json({message:"error",params:params})
+        if (user.password != params.currentUser.password) {
+            res.status(400).json({ message: "error", params: params })
             return
 
         }
-        const token: any = jwt.sign({user}, KEY);
+        const token: any = jwt.sign({ user }, KEY);
         session.token = token;
-        res.json({token: token});
+        res.json({ token: token });
     }
 
 
@@ -47,6 +46,6 @@ export default function handler(
 
 export const config = {
     api: {
-      externalResolver: true,
+        externalResolver: true,
     },
-  };
+};
