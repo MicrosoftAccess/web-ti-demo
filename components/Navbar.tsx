@@ -1,6 +1,4 @@
-import { Modal } from "flowbite-react/lib/esm/components";
 import { ReactFragment, useState } from "react";
-import { Button } from "flowbite-react/lib/esm/components/Button";
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import Image from "next/image";
 import Link from "next/link";
