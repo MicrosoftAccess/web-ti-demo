@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Modal, Box, TextareaAutosize, Typography } from "@mui/material";
 import { IoCloseOutline } from 'react-icons/io5';
 import { AiOutlinePlus } from 'react-icons/ai';
 import Layout from '../../../components/Layout'
@@ -8,22 +7,21 @@ import Pill from '../../../components/Pill'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import { PrismaClient } from "@prisma/client";
 import Review from '../../../components/Review'
-import ReviewModal from '../../../components/ReviewModal'
 
-const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '50%',
-  height: '50%',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-};
+// const style = {
+//   position: 'absolute' as 'absolute',
+//   top: '50%',
+//   left: '50%',
+//   transform: 'translate(-50%, -50%)',
+//   width: '50%',
+//   height: '50%',
+//   bgcolor: 'background.paper',
+//   border: '2px solid #000',
+//   boxShadow: 24,
+//   pt: 2,
+//   px: 4,
+//   pb: 3,
+// };
 
 const prisma = new PrismaClient();
 export default function index({ game, review }: any) {
@@ -169,7 +167,7 @@ export default function index({ game, review }: any) {
 
         </div>
       </div>
-      <Modal
+      {/* <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -195,7 +193,7 @@ export default function index({ game, review }: any) {
             </Typography>
           </form>
         </Box>
-      </Modal>
+      </Modal> */}
     </Layout >
 
   )
