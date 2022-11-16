@@ -1,11 +1,9 @@
-import ProductOnSlide from "./ProductOnSlide";
 import Image from 'next/image';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Pill from "./Pill";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux'
 import { addProduct } from "../slices/cartSlice";
-import type { RootState } from '../store'
 
 export default function Product({ props }: any) {
   const cart = useSelector((state: any) => state.cart.products)
