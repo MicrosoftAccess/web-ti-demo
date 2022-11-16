@@ -1,0 +1,103 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// model User {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   email     String   @unique
+//   name      String?
+//   password  String
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   role      Role     @default(USER)
+//   gameIDs   String[] @db.ObjectId
+//   games     Game[]   @relation(fields: [gameIDs], references: [id])
+//   reviews   Review[]
+// }
+
+model UserInfo {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  email    String   @unique
+  name     String?
+  password String
+  library  String[]
+  // createdAt DateTime @default(now())
+  // updatedAt DateTime @updatedAt
+  // Game     Game?    @relation(fields: [gameId], references: [id])
+  // gameId   String?  @db.ObjectId
+  // Review   Review[]
+}
+
+model Product {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String   @unique
+  price       String
+  images      String
+  description String
+  categories  String[]
+  // createdAt   DateTime @default(now())
+  // updatedAt   DateTime @updatedAt
+}
+
+// model UserLibrary {
+//   id     String   @id @default(auto()) @map("_id") @db.ObjectId
+//   games  String[]
+//   userID String
+// }
+
+// model Game {
+//   id          String     @id @default(auto()) @map("_id") @db.ObjectId
+//   name        String     @unique
+//   price       Int
+//   createdAt   DateTime   @default(now())
+//   updatedAt   DateTime   @updatedAt
+//   images      String?
+//   description String
+//   categoryIDs String[]   @db.ObjectId
+//   categories  Category[] @relation(fields: [categoryIDs], references: [id])
+//   userIDs     String[]   @db.ObjectId
+//   reviewIDs   String[]   @db.ObjectId
+//   users       User[]     @relation(fields: [userIDs], references: [id])
+//   reviews     Review[]
+// }
+
+model GameReview {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String
+  gameID String
+  text   String
+}
+
+// model Review {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   userId    Int
+//   detail    String
+//   author    User?    @relation(fields: [authorId], references: [id])
+//   authorId  String?
+//   game      Game?    @relation(fields: [gameId], references: [id])
+//   gameId    String?
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+
+// model Category {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   name      String
+//   gameIDs   String[] @db.ObjectId
+//   games     Game[]   @relation(fields: [gameIDs], references: [id])
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+
+enum Role {
+  USER
+  ADMIN
+}
