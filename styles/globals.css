@@ -14,7 +14,7 @@ html,body, #__next {
   box-sizing: border-box;
   margin: 0;
   @apply bg-gradient-to-b from-gray-900 via-gray-900  bg-purple-800 bg-no-repeat;
-}
+} 
 
 @keyframes AnimationName {
   0%,

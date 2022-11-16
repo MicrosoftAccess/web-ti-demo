@@ -11,7 +11,6 @@ export default function Review({ text }: any) {
             setClick(true)
             setClick2(false)
         }
-
         else {
             setClick(true)
         }
