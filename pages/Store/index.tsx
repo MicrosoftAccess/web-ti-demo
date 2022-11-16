@@ -11,13 +11,13 @@ import Link from "next/link";
 import { getSession, useSession } from "next-auth/react";
 export default function Store() {
   const { data, status } = useSession();
-  const cart = useSelector(state => state.cart)
+  const cart = useSelector((state: any) => state.cart)
   const dispatch = useDispatch()
   const postShop = async (event: any) => {
     event.preventDefault()
     const userLibrary: any = {
       library: cart.products,
-      email: data.user.email
+      email: data?.user?.email
     };
 
 
