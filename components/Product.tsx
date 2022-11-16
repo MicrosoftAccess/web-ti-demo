@@ -8,7 +8,7 @@ import { addProduct } from "../slices/cartSlice";
 import type { RootState } from '../store'
 
 export default function Product({ props }: any) {
-  const cart = useSelector((state: RootState) => state.cart.products)
+  const cart = useSelector((state: any) => state.cart.products)
   const productData = props.appid
   console.log(cart);
 
