@@ -70,7 +70,7 @@ export const getServerSideProps = async (context: any) => {
     let gamesArray: any = []
     const library: any = await prisma.userInfo.findFirst({
         where: {
-            email: session.user?.email
+            email: session.user?.email!
         },
     });
 
