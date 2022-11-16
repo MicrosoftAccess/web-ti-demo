@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'ti-demo'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9653B8269C3496C85B3A6E098F12646 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8CB8D56970E746A58F836CD6ED0FBAC6 }}
           package: .
