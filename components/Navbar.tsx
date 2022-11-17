@@ -38,7 +38,11 @@ export default function Navbar() {
         </div>
         <div className="flex h-full justify-center items-center">
           {login ? <Link href="/Login">
-            <button className="bg-black  text-white w-20 h-10 rounded">Login</button></Link> : <button onClick={() => signOut()} className="bg-black  text-white w-20 h-10 rounded">Cerrar sesión</button>}
+            <button className="bg-black  text-white w-20 h-10 rounded">Login</button></Link> : <div className="flex flex-row">
+            <Link href={'/CRUD'}>
+              <button className="bg-black  text-white w-20 h-10 rounded">Mis juegos</button>
+            </Link>
+            <button onClick={() => signOut()} className="bg-black  text-white w-20 h-10 rounded">Cerrar sesión</button></div>}
           <Link href={"/Store"}>
             <button onClick={() => setVisible(true)} className="bg-black  text-white w-20 h-10 rounded"><AiOutlineShoppingCart className="" size={20} /></button>
           </Link>

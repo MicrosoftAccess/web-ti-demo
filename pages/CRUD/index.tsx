@@ -8,9 +8,9 @@ export default function CRUD() {
             <div className='h-full w-full flex  justify-center container'>
                 <div className='h-full w-10/12 justify-center items-center bg-white flex-row rounded-xl flex'>
                     <div className='flex flex-col w-full gap-3 justify-center items-center'>
-                        <div className='w-full justify-end flex'>
+                        <div className='w-4/5 justify-end flex'>
                             <Link href={'/CRUD/C'}>
-                                <button className='h-10 mr-8 text-white w-10 rounded-3xl bg-green-500 border-none'>+</button>
+                                <button className='h-10  text-white w-10 rounded-3xl bg-green-500 border-none'>+</button>
                             </Link>
                         </div>
                         <div className="overflow-x-auto relative">
