@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node_modules/next/dist/bin/next start -p $PORT",
+    
+    "start": "cross-env NEXTAUTH_URL=https://MY-APP-qa-next.azurewebsites.net node server.js",
     "lint": "next lint",
     "gcp-build": "npm run build",
     "deploy" : "gcloud config set project sharp-haven-368917 && gcloud app deploy app.yaml --version=0-1-0"

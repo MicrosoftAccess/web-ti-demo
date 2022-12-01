@@ -117,10 +117,7 @@ export default function index({ game, review }: any) {
                     <h3 className="text-2xl text-center">Reseñas</h3>
 
                   </div>
-                  <div className="w-1/4 flex justify-center">
-                    <button className='h-8 w-8 items-center flex justify-center rounded-3xl border-none text-white bg-green-500' onClick={() => setOpen(true)}> <AiOutlinePlus /></button>
 
-                  </div>
 
                 </div>
                 <div className="w-full  h-0.5 roundedn-xl bg-indigo-600 "></div>
@@ -140,6 +137,34 @@ export default function index({ game, review }: any) {
                     </h1>}
 
                   <button className="border-none bg-transparent rounded-md text-white animate-bounce mt-4 items-center justify-center flex flex-col"><span>Ver más</span> <AiOutlineArrowDown /></button>
+                </div>
+                <div className="w-full gap-3 rounded-xl  h-auto shadow-2xl text-black bg-white flex-col flex">
+                  <form onSubmit={postReview}>
+                    <div className="w-full flex flex-row justify-between items-center">
+                      <div className="w-3/4">
+                        <h3 className="text-2xl text-center">Agregar Reseña</h3>
+
+                      </div>
+                      <div className="w-1/4 flex justify-center">
+                        <button type="submit" className='h-8 w-8 items-center flex justify-center rounded-3xl border-none text-white bg-green-500' onClick={() => setOpen(true)}> <AiOutlinePlus /></button>
+
+                      </div>
+
+                    </div>
+                    <div className="w-full  h-0.5 roundedn-xl bg-indigo-600 mb-5"></div>
+
+                    <div className="w-full flex items-center  justify-center  gap-3 pb-10">
+                      <div className='w-full items-center flex justify-center '>
+
+                        <input onChange={handleInputChange} name="text" type="text" className="w-10/12 h-48" />
+
+
+                      </div>
+
+
+                    </div>
+
+                  </form>
                 </div>
 
 
@@ -164,36 +189,18 @@ export default function index({ game, review }: any) {
               </div>
             </div>
           </div>
+          {/* <div className="w-full flex-row gap-4 flex  h-3/4">
+            <div className=" w-10/12 items-end flex-col flex ">
+              
+
+
+
+            </div>
+
+          </div> */}
 
         </div>
       </div>
-      {/* <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={{ ...style }}>
-          <div style={{ justifyContent: 'end', display: 'flex', width: '100%' }}>
-            <button style={{ cursor: 'pointer', background: 'transparent', border: 'none' }} onClick={handleClose}><IoCloseOutline size={20} style={{ cursor: 'pointer', background: 'transparent', border: 'none' }} /></button>
-          </div>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Reseña
-          </Typography>
-          <form onSubmit={postReview} style={{ width: '100%', height: '100%' }}>
-            <Typography style={{ width: '100%', height: '70%' }} id="modal-modal-description" sx={{ mt: 2 }}>
-              <TextareaAutosize
-                onChange={handleInputChange}
-                name="text"
-                aria-label="empty textarea"
-                placeholder="Reseña"
-                style={{ width: '100%', height: '90%', resize: 'none' }}
-              />
-              <button type="submit" style={{ color: 'white', width: '100%', height: '5%', border: 'none', background: 'lightgreen' }}>Enviar</button>
-            </Typography>
-          </form>
-        </Box>
-      </Modal> */}
     </Layout >
 
   )
